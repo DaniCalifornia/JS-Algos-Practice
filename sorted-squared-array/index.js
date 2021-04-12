@@ -10,6 +10,8 @@
 // - can i use array methods? (sort, map)
 // - can i modify the original array? no
 
+// NEXT TIME: alternative solution with start/end pointers
+
 function sortedSquaredArray(array) {
 	const output = []
 	// add negative integers to a new array
