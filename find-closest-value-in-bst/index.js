@@ -1,3 +1,6 @@
+// Write a function that takes in a BST and a target integer value and returns
+// the closest value to that target value contained in the BST
+
 // key points
 // return closest value to target value
 // if node value === target value, return value
