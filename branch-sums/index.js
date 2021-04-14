@@ -35,3 +35,38 @@ function branchSums(root, currSum=0, sums=[]) {
 // time: O(n) where n = # nodes
 // space: O(n)
 
+// test
+
+// make BinaryTree
+const one = new BinaryTree(1)
+const two = new BinaryTree(2)
+const three = new BinaryTree(3)
+const four = new BinaryTree(4)
+const five = new BinaryTree(5)
+const six = new BinaryTree(6)
+const seven = new BinaryTree(7)
+const eight = new BinaryTree(8)
+const nine = new BinaryTree(9)
+const ten = new BinaryTree(10)
+
+one.left = two
+one.right = three
+two.left = four
+two.right = five
+three.left = six
+three.right = seven
+four.left = eight
+four.right = nine
+five.left = ten
+
+const input = one
+const answer = [15, 16, 18, 10, 11]
+
+const output = branchSums(input)
+
+if (output.toString() === answer.toString())
+  console.log('PASS')
+else
+  console.log('FAIL, correct output: ', answer)
+
+console.log('your output: ', output)
