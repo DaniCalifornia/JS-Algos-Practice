@@ -5,7 +5,7 @@
 // key points
 // - binary tree not BST
 // - no return value
-// - bfs goes through tree level by level
+// - dfs preorder goes through root first then children left to right
 
 function node(value) {
   return {
@@ -14,20 +14,22 @@ function node(value) {
   };
 }
 
-function bfs(startingNode, callback) {
-  // start with just root node
-  let queue = [startingNode]
-  // while queue is not empty
-  while (queue.length) {
-    // add children of the first node in queue
-    queue[0].children.forEach(child => {
-      queue.push(child)
-    });
-    // call callback function on first node in queue
-    callback(queue[0].value)
-    // remove first node from queue
-    queue.shift()
-  }
+function preOrderDFS(startingNode, callback) {
+  // call callback function on startingNode
+  callback(startingNode.value)
+  // recursively call DFS on each child node, left to right
+  startingNode.children.forEach(child => {
+    preOrderDFS(child, callback)
+  });
+}
+
+function postOrderDFS(startingNode, callback) {
+  // recursively call DFS on each child node, left to right
+  startingNode.children.forEach(child => {
+    postOrderDFS(child, callback)
+  });
+  // call callback function on startingNode
+  callback(startingNode.value)
 }
 
 var a = node('a');
@@ -54,7 +56,9 @@ d.children.push(i, j);
 function printNode(val) {
   console.log(val)
 }
-
-bfs(a, printNode)
+console.log('pre order')
+preOrderDFS(a, printNode)
+console.log('post order')
+postOrderDFS(a, printNode)
 
 // time complexity: O(n)
