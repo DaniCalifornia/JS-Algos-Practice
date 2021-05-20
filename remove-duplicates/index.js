@@ -31,6 +31,24 @@ function removeDuplicates(nums) {
   return nums.length
 }
 
+// time complexity: O(n^2)?
+// space complexity: O(1)
+
+// alternate approach: two pointers - slow and fast
+
+// function removeDuplicates(nums) {
+//   if (nums.length == 0)
+//     return 0
+//   let i = 0
+//   for (let j = 1; j < nums.length; j++) {
+//       if (nums[j] != nums[i]) {
+//           i++;
+//           nums[i] = nums[j];
+//       }
+//   }
+//   return i + 1;
+// }
+
 // // test
 const input = [1, 2, 2, 2, 3, 4, 5, 5, 5, 5]
 const output = removeDuplicates(input)
