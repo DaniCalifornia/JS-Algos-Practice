@@ -27,18 +27,28 @@ function firstNonRepeating(str) {
   for (let i = 0; i < str.length; i++) {
     // if str[i] in object, set to 2
     if (characters[str[i]]) {
-      console.log('if', str[i])
       characters[str[i]] = 2
-    } // if not, assign to 1
+    }
+    // if not, assign to 1
     else {
-      console.log('else', str[i])
       characters[str[i]] = 1
     }
   }
-  console.log('characters obj', characters)
   for (let char in characters) {
     if (characters[char] === 1)
       return char
   }
   return '_'
 }
+
+const input = 'aaabccccdeee'
+const answer = 'b'
+
+const output = firstNonRepeating(input)
+
+if (answer === output)
+  console.log('PASS')
+else
+  console.log('FAIL, correct answer: ', answer)
+
+console.log('your output: ', output)
