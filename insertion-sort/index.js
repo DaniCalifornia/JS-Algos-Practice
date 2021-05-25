@@ -30,3 +30,15 @@ function insertionSort(array) {
 
 // time complexity: O(n^2) worst case
 // space complexity: O(1)
+
+const input = [2, 4, 1, 5, 3]
+const answer = [1, 2, 3, 4, 5]
+
+const output = insertionSort(input)
+
+if (output.toString() === answer.toString())
+  console.log('PASS')
+else
+  console.log('FAIL, correct output: ', answer)
+
+console.log('your output: ', output)
